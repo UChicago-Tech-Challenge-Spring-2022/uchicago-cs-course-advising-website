@@ -79,7 +79,9 @@ Rails.application.configure do
 
   # Configure action mailer delivery method as an smtp server
   # Authenticates our account so we can use Google, a provided smtp server
-  config.action_mailer.delivery_method = :smtp = {
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
     domain: "gmail.com",
