@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-root to: 'welcome#welcome'
+
+root to: 'home#index'
        
-get '/login', to: 'login#login'
+get '/manual', to: 'manual#index'
 
-get '/manual', to: 'manual#course_manual'
+get '/schedule', to: 'schedule#index'
 
-get '/notification', to: 'notify#notification'
+get '/notification', to: 'notification#index'
+post '/notificaiton', to: 'notification#create_monitor'
+
 end

@@ -1,6 +1,6 @@
-class WelcomeController < ApplicationController
+class HomeController < ApplicationController
 
-  def welcome
+  def index
     render({ :template => "welcome.html.erb" })
   end
   
