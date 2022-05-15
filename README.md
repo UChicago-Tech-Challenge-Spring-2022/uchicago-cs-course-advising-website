@@ -6,7 +6,7 @@
 - Add email confirmation feature and username to Sign in/up system, preferably, use OmniAuth to directly sign in
 - Add email restriction for registration: only uchicago emails are allowed to sign up/in
 - Create editable tables in Schedule Page
-- Create forms to accept input for the Notifier funciton
+- Implementation of the notification
 - Integrate NLP to the Schedule Page
 
 ## Standard Workflow
