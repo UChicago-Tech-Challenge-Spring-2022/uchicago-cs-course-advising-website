@@ -3,10 +3,10 @@
 ## Current TODOs:
 - Decorate Home Page
 - Decorate Sign in/up Page
-- Add email confirmation feature and username to Sign in/up system
+- Add email confirmation feature and username to Sign in/up system, preferably, use OmniAuth to directly sign in
 - Create editable tables in Schedule Page
 - Create forms to accept input for the Notifier funciton
-
+- Integrate NLP to the Schedule Page
 
 ## Standard Workflow
 
