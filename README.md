@@ -1,5 +1,13 @@
 # README
 
+## Current TODOs:
+- Decorate Home Page
+- Decorate Sign in/up Page
+- Add email confirmation feature and username to Sign in/up system
+- Create editable tables in Schedule Page
+- Create forms to accept input for the Notifier funciton
+
+
 ## Standard Workflow
 
  1. Start the web server by running `bin/server`.
@@ -34,9 +42,3 @@ Run _bin/server_ and open the popped out window, and enter the route "/" in the 
 **Note**
 Add perssion to gitpod, go to https://gitpod.io/integrations, inside git providers, edit permission, tick all boxes. Also manage on github.com and click grant for organization
 
-## Current TODOs:
-- Decorate Home Page
-- Decorate Sign in/up Page
-- Add email confirmation feature and username to Sign in/up system
-- Create editable tables in Schedule Page
-- Create forms to accept input for the Notifier funciton
