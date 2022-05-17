@@ -119,15 +119,24 @@ h5{
 }
 
 .alert {
-  padding: 10px;
-  background-color: #f44336;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #cc4125;
   color: white;
+  opacity: 1;
+  transition: opacity 0.3s;
+  margin-bottom: 15px;
 }
+
 
 .notice {
   padding: 15px;
+  border-radius: 10px;
   background-color:#6aa84f;
   color: white;
+  opacity: 1;
+  transition: opacity 0.3s;
+  margin-bottom: 15px;
 }
 
 .closebtn {
@@ -144,6 +153,8 @@ h5{
 .closebtn:hover {
   color: black;
 }
+
+
 
 .signinup{
   width: 300px;
