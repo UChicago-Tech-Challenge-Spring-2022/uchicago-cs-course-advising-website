@@ -7,7 +7,6 @@
 - Create editable tables in Schedule Page
 - Integrate NLP to the Schedule Page
 - Implementation of the notification
-- Improve the decoration
 
 ## Standard Workflow
 
