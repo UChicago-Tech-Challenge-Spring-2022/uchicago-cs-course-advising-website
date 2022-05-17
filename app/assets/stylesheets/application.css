@@ -99,11 +99,26 @@ button{
   box-sizing: border-box;
   cursor: pointer;
   margin: 10px 15px;
-  background-image: url(https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png);
   background-position: center;
   background-size:cover;
   transition: transform 0.5s;
 
+}
+
+.card1{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_488801411_2000133320009280356_115425.jpg);
+}
+
+.card2{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://media.wired.com/photos/5a0a38c1d07f6824ff44221b/master/w_2560%2Cc_limit/twitterlists-TA.jpg);
+}
+
+.card3{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/330px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg);
+}
+
+.card4{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://filestage.io/wp-content/uploads/2021/06/feedback-flow.png);
 }
 .card:hover{
   transform:translateY(-20px);
@@ -111,7 +126,7 @@ button{
 h5{
   color: #fff;
   font-size: 20px;
-  text-shadow:0 0 5px #999;
+  text-shadow:0 0 5px rgb(0, 0, 0);
 }
 .card p{
   text-shadow: 0 0 15px #000;
