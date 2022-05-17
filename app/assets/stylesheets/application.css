@@ -21,7 +21,7 @@
 .container{
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0.7)), url('/assets/background.png');
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0.1)), url('/assets/background.png');
   background-position: center;
   background-size: cover;
   padding-left: 8%;
@@ -34,8 +34,11 @@
   align-items: center;
 }
 .logo{
-  width: 50px;
+  border: 3px solid rgb(255, 255, 255);
+
+  width: 60px;
   margin-top: 20px;
+  
 }
 .menu-icon{
   width: 30px;
@@ -51,10 +54,12 @@ nav ul li{
   display: inline-block;
   margin-left: 60px;
 }
+
+
 nav ul li a{
   text-decoration: none;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 .row{
   display:flex;
@@ -94,19 +99,91 @@ button{
   box-sizing: border-box;
   cursor: pointer;
   margin: 10px 15px;
-  background-image: url(https://media.istockphoto.com/photos/light-blue-paper-color-with-texture-for-background-picture-id1095286208?k=20&m=1095286208&s=612x612&w=0&h=p3C9pEsewN1uLqMYqfdawyJxHnYzgcKFf1dZZ6q6P9U=);
+  background-position: center;
+  background-size:cover;
+  transition: transform 0.5s;
+
+}
+
+.card1{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_488801411_2000133320009280356_115425.jpg);
+}
+
+.card2{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://media.wired.com/photos/5a0a38c1d07f6824ff44221b/master/w_2560%2Cc_limit/twitterlists-TA.jpg);
+}
+
+.card3{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/330px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg);
+}
+
+.card4{
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://filestage.io/wp-content/uploads/2021/06/feedback-flow.png);
+}
+.card:hover{
+  transform:translateY(-20px);
+}
+h5{
+  color: #fff;
+  font-size: 20px;
+  text-shadow:0 0 5px rgb(0, 0, 0);
+}
+.card p{
+  text-shadow: 0 0 15px #000;
+  font-size: 12px;
+}
+
+.alert {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #cc4125;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.3s;
+  margin-bottom: 15px;
+}
+
+
+.notice {
+  padding: 15px;
+  border-radius: 10px;
+  background-color:#6aa84f;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.3s;
+  margin-bottom: 15px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+
+.signinup{
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+  vertical-align:top;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-image: url(https://www.stkconf.org/wp-content/uploads/2018/10/Web-Page-Background-Color.jpg);
   background-position: center;
   background-size:cover;
   transition: transform 0.5s;
 }
-.card:hover{
-  transform:translateY(-10px);
-}
-h5{
-  color: #fff;
-  text-shadow:0 0 5px #999;
-}
-.card p{
-  text-shadow: 0 0 15px #000;
-  font-size: 8px;
-}
+

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VanillaRails</title>
+    <title>CS Advising</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://i0.wp.com/biocars.uchicago.edu/wp-content/uploads/2019/05/cropped-logo.png?ssl=1" type="image/png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,13 +12,14 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
   </head>
 
   <body class="container">
     <%#-----tabs accessible for every page--------%>
       
         <div class="navbar">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/79/University_of_Chicago_shield.svg/1200px-University_of_Chicago_shield.svg.png" class="logo">
+          <img src="/assets/uchicago-logo.png" class="logo">
           <nav>
             <ul> 
               <li><a href="/">Home</a></li>
@@ -47,11 +49,33 @@
     <%#-------------------------------------------%>
 
     <%#any alert or notice message%>
-    <div style="color: red;"><%=alert%></div>
+    <%if alert!=nil%>
+      <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <%=alert%>
+      </div>
+    <%end%>
     
-    <div style="color: blue;"><%=notice%></div>
+    <%if notice!=nil%>
+      <div class="notice">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <%=notice%>
+      </div>
+    <%end%>
+
     
     <%= yield %>
+    <script>
+      var close = document.getElementsByClassName("closebtn");
+      var i;
 
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+      }
+    </script>
   </body>
 </html>

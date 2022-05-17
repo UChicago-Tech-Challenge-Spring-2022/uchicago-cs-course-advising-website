@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    render({ :template => "welcome.html.erb" })
+    render({ :template => "home.html.erb" })
   end
   
   end
