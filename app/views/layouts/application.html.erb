@@ -15,7 +15,7 @@
 
   <body>
     <%#-----tabs accessible for every page--------%>
-
+      
         <div class="navbar">
           <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/79/University_of_Chicago_shield.svg/1200px-University_of_Chicago_shield.svg.png" class="logo">
           <nav>
@@ -25,7 +25,7 @@
               <li><a href="/notification">Notifier</a></li>
               
                <% if user_signed_in?%>
-              <div><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 
               <% else %>
               
