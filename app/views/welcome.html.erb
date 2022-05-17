@@ -34,36 +34,28 @@
 
     <div class="card">
       <h5>
-      <a href="http://collegecatalog.uchicago.edu/thecollege/computerscience/">
-      Uchicago CS Catalog
-      </a>
-      </h5>
-      <p>Shows you regular college catalog page</p>
-    </div>
-
-    <div class="card">
-      <h5>
-      <a href="https://course-info.cs.uchicago.edu/">
-      Uchicago CS Info
-      </a>
-      </h5>
-      <p>The page where CS department update our courses</p>
-    </div>
-
-    <div class="card">
-      <h5>
-      <a href="/manual">
-      Uchicago CS Manual
-      </a>
+      <%= link_to "CS Manual", "/manual", target: :_blank %>
       </h5>
       <p>Handwritten, updated advice on how to plot your course path</p>
     </div>
 
     <div class="card">
       <h5>
-      <a href="https://registrar.uchicago.edu/registration/college-process/course-feedback/">
-      Uchicago CS Course Feedback
-      </a>
+       <%= link_to "CS Info", "https://course-info.cs.uchicago.edu/", target: :_blank %>
+      </h5>
+      <p>The page where CS department update our courses</p>
+    </div>
+
+    <div class="card">
+      <h5>
+      <%= link_to "College Catalog", "http://collegecatalog.uchicago.edu/thecollege/computerscience/", target: :_blank %>
+      </h5>
+      <p>Shows you regular college catalog page</p>
+    </div>
+
+    <div class="card">
+      <h5>
+      <%= link_to "Course Eval", "https://registrar.uchicago.edu/registration/college-process/course-feedback/", target: :_blank %>
       </h5>
       <p>Course feedback website of the school</p>
     </div>

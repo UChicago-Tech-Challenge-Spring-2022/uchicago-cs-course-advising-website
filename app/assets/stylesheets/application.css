@@ -58,7 +58,7 @@ nav ul li a{
 }
 .row{
   display:flex;
-  height: 88%;
+  height: 70%;
   align-items: center;
 }
 .col{
