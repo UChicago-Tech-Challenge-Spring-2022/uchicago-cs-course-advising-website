@@ -1,13 +1,13 @@
 # README
 
 ## Current TODOs:
-- Decorate Home Page
-- Decorate Sign in/up Page
+- Put CS Manual onto the website
 - Add email confirmation feature and username to Sign in/up system, preferably, use OmniAuth to directly sign in
 - Add email restriction for registration: only uchicago emails are allowed to sign up/in
 - Create editable tables in Schedule Page
-- Implementation of the notification
 - Integrate NLP to the Schedule Page
+- Implementation of the notification
+- Improve the decoration
 
 ## Standard Workflow
 
