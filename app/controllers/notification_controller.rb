@@ -19,7 +19,7 @@ class NotificationController < ApplicationController
     #### Could also verify if emails and courseNumber are valid?
     @email = params.fetch("email")
     @courseNum = params.fetch("courseNumber")
-    
+    #courseNum, go to the public course search 
 
 
 
