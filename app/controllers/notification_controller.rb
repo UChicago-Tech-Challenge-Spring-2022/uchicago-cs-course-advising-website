@@ -87,8 +87,6 @@ class NotificationController < ApplicationController
 			j += 1
 		end
 		
-		#puts "Please enter a 1 to close popup."
-		#user_input = gets.chomp.to_i
 		return section_status
 	end
 end
