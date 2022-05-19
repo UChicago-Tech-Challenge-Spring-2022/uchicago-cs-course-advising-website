@@ -1,5 +1,11 @@
 # README
 
+##CSS and Devise
+- put css codes in app/assets/stylesheets/application.css and you can access it anywhere
+- sign up page's view: devise/registration/new.html.erb
+- sign in page's view: devise/session/new.html.erb
+- forgot your password's view: devise/password/new.html.erb
+
 ## Current TODOs:
 - Put CS Manual onto the website
 - Add email confirmation feature and username to Sign in/up system, preferably, use OmniAuth to directly sign in
