@@ -107,6 +107,7 @@ end
 		end
 	end
 
+	#function continuously queries every 1m to find open section and breaks when it does
 	def query_class_availibility(inputted_course_num)
 		loop do
 			section_status_arr = launchBrowser(inputted_course_num)
