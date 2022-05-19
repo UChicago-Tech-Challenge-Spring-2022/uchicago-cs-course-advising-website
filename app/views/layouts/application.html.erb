@@ -1,33 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VanillaRails</title>
+    <title>CS Advising</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://i0.wp.com/biocars.uchicago.edu/wp-content/uploads/2019/05/cropped-logo.png?ssl=1" type="image/png">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
   </head>
 
-  <body>
+  <body class="container">
     <%#-----tabs accessible for every page--------%>
+      
+        <div class="navbar">
+          <img src="/assets/uchicago-logo.png" class="logo">
+          <nav>
+            <ul> 
+              <li><a href="/">Home</a></li>
+              <li><a href="/schedule">Schedule</a></li>
+              <li><a href="/notification">Notifier</a></li>
+              
+               <% if user_signed_in?%>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+
+              <% else %>
+              
+                <li><a href="/users/sign_in">Sign In</a></li>
+                <li><a href="/users/sign_up">Sign Up</a></li>
+              <%end%>
+            </ul>
+          </nav>
+          </div>
+
+
+    <%#
     <div><a href="/">Home</a></div>
     <div><a href="/manual">CS Manual</a></div>
     <div><a href="/schedule">Scheduling</a></div>
     <div><a href="/notification">Notifier</a></div>
 
-    <% if user_signed_in?%>
-      <div><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
-    <% else %>
-      <div><a href="/users/sign_in">Sign In</a></div>
-      <div><a href="/users/sign_up">Sign Up</a></div>
-    <%end%>
+   
     <%#-------------------------------------------%>
 
     <%#any alert or notice message%>
-    <div style="color: red;"><%=alert%></div>
-    <div style="color: blue;"><%=notice%></div>
+    <%if alert!=nil%>
+      <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <%=alert%>
+      </div>
+    <%end%>
+    
+    <%if notice!=nil%>
+      <div class="notice">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <%=notice%>
+      </div>
+    <%end%>
+
+    
     <%= yield %>
+    <script>
+      var close = document.getElementsByClassName("closebtn");
+      var i;
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+      }
+    </script>
   </body>
 </html>
