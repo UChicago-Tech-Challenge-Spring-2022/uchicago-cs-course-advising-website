@@ -9,13 +9,43 @@ class NotificationController < ApplicationController
   
       $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL?')
   
-      #search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").attribute('placeholder')
-      search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD")
-  
-      $driver.execute_script('arguments[0].value = arguments[1]', search, 'CMSC 15400')
+      search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("SOSC 15300")
   
       $driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
+    
+      def wait_until_appears(type, name, timeout: 5)
+          wait = Selenium::WebDriver::Wait.new(timeout: timeout)
+          wait.until { $driver.find_element(:xpath, "//span[@id='UC_RSLT_NAV_WRK_PTPG_ROWS_GRID']").attribute("innerText") != "" }
+      end
+  
+        
+      num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
+      puts "the number of available sections is:" 
+      puts num_sections 
+  
+      availibility = $driver.find_element(:id, "UC_CLSRCH_WRK_DESCR1$0").attribute("innerText")
+      puts "the first section has this many ppl: "
+      puts availibility
+  
+      #$driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText") != " " 
+  
       
+      #Watir::Wait.until { $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText") }
+  
+      #num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText").wait_until_present
+  
+      #puts num_sections
+      #until $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText").exists?
+  
+      #num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
+      #	puts "the number of available sections is:"
+      #	puts num_sections
+      #finding number of sections for course
+      #num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
+      #num_sections = $driver.find_element(:xpath, "//span[@id='UC_RSLT_NAV_WRK_PTPG_ROWS_GRID']").text
+      #puts "the number of available sections is:"
+      #puts num_sections
+  
       puts "Please enter a 1 to close popup."
       user_input = gets.chomp.to_i
     end
