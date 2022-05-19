@@ -4,59 +4,7 @@ class NotificationController < ApplicationController
   
   #added the following line for POST /notification error; Need to fix it later for security issue
   skip_before_action :verify_authenticity_token
-
-  def launchBrowser()
-    user_input = nil
-    until(user_input == 1)
-      $driver = Selenium::WebDriver.for :chrome
-  
-      $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL?')
-  
-      search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("CMSC 15400")
-  
-      $driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
-    
-    def wait_until_appears(type, name, timeout: 5)
-	  		wait = Selenium::WebDriver::Wait.new(timeout: timeout)
-	  		#wait.until { $driver.find_element(:xpath, "//span[@id='UC_RSLT_NAV_WRK_PTPG_ROWS_GRID']").attribute("innerText") != "" }
-	  		wait.until { $driver.find_element(:xpath, "//td[@class='ps_grid-cell']").clickable? }
-		end
-
-			
-		num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
-		puts "the number of available sections is:" 
-		puts num_sections 
-
-		availibility = $driver.find_element(:id, "UC_CLSRCH_WRK_DESCR1$0").attribute("innerText")
-		puts "the first section has this many ppl: "
-		puts availibility
-  
-      #$driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText") != " " 
-  
-      
-      #Watir::Wait.until { $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText") }
-  
-      #num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText").wait_until_present
-  
-      #puts num_sections
-      #until $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText").exists?
-  
-      #num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
-      #	puts "the number of available sections is:"
-      #	puts num_sections
-      #finding number of sections for course
-      #num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
-      #num_sections = $driver.find_element(:xpath, "//span[@id='UC_RSLT_NAV_WRK_PTPG_ROWS_GRID']").text
-      #puts "the number of available sections is:"
-      #puts num_sections
-  
-      puts "Please enter a 1 to close popup."
-      user_input = gets.chomp.to_i
-    end
-  end
-  launchBrowser()
-  
-
+ 
   def index
     if user_signed_in?
       render({ :template => "notification.html.erb" })
@@ -84,4 +32,29 @@ class NotificationController < ApplicationController
       redirect_to "/", alert: "In order to use the Notifier, you have to sign in first"
     end
   end
+end
+
+def launchBrowser()
+user_input = nil
+until(user_input == 1)
+	$driver = Selenium::WebDriver.for :chrome
+
+	$driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL?')
+
+	search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("CMSC 27200")
+
+	$driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
+
+	wait = Selenium::WebDriver::Wait.new(timeout: 10)
+	wait.until { 
+		($driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")).length > 4
+	}
+
+	num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
+	puts "num_sections: "
+	puts num_sections 
+
+	puts "Please enter a 1 to close popup."
+	user_input = gets.chomp.to_i
+end
 end
