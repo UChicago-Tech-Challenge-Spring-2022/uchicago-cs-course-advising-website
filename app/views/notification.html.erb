@@ -22,9 +22,10 @@
 
 <body>
   <!-- your content here... -->
-  <h1 style="color:blue;">This is notification</h1>
+  <h1>This is notification</h1>
 
 
+<div class="card">
   <form action="/notification" method="post">
     <label for="courseNumber">Course Number:</label><br>
     <input type="text" id="courseNumber" name="courseNumber" value="e.g. CMSC 25400"><br>
@@ -32,7 +33,7 @@
     <input type="text" id="email" name="email" value=<%=current_user.email%>><br><br>
     <input type="submit" value="Submit">
   </form>
-
+</div>
 </body>
 </html>
 
