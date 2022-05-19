@@ -2,6 +2,9 @@ class NotificationController < ApplicationController
   require 'selenium'
   require 'selenium-webdriver'
   
+  #added the following line for POST /notification error; Need to fix it later for security issue
+  skip_before_action :verify_authenticity_token
+
   def launchBrowser()
     user_input = nil
     until(user_input == 1)
@@ -9,7 +12,7 @@ class NotificationController < ApplicationController
   
       $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL?')
   
-      search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("SOSC 15300")
+      search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("CMSC 15400")
   
       $driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
     
@@ -53,8 +56,6 @@ class NotificationController < ApplicationController
   end
   launchBrowser()
   
-  #added the following line for POST /notification error; Need to fix it later for security issue
-  skip_before_action :verify_authenticity_token
 
   def index
     if user_signed_in?
