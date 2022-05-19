@@ -32,29 +32,24 @@ class NotificationController < ApplicationController
       redirect_to "/", alert: "In order to use the Notifier, you have to sign in first"
     end
   end
+  
+  def launchBrowser()
+    $driver = Selenium::WebDriver.for :chrome
+  
+    $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL?')
+  
+    search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("CMSC 27200")
+  
+    $driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
+  
+    wait = Selenium::WebDriver::Wait.new(timeout: 10)
+    wait.until { 
+      ($driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")).length > 4
+    }
+  
+    num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
+    puts "num_sections: "
+    puts num_sections 
+  end    
 end
 
-def launchBrowser()
-user_input = nil
-until(user_input == 1)
-	$driver = Selenium::WebDriver.for :chrome
-
-	$driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL?')
-
-	search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys("CMSC 27200")
-
-	$driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
-
-	wait = Selenium::WebDriver::Wait.new(timeout: 10)
-	wait.until { 
-		($driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")).length > 4
-	}
-
-	num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
-	puts "num_sections: "
-	puts num_sections 
-
-	puts "Please enter a 1 to close popup."
-	user_input = gets.chomp.to_i
-end
-end
