@@ -188,3 +188,39 @@ h5{
   transition: transform 0.5s;
 }
 
+
+
+
+table {
+  border-collapse: collapse;
+  table-layout : fixed;
+  text-align: left;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  padding: 4px;
+  color: white;
+}
+
+td{
+  text-align: left;
+  padding: 4px;
+  border-color: #cccccc;
+  border-style: solid;
+}
+
+tr{
+  background-color:#d9d9d9;
+}
+
+
+.th1 {
+  background-color: #4a86e8;
+}
+
+.th2 {
+  background-color: #cc0000;
+}
+
