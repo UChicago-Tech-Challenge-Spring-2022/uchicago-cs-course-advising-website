@@ -13,19 +13,20 @@ class NotificationController < ApplicationController
   
       $driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
     
-      def wait_until_appears(type, name, timeout: 5)
-          wait = Selenium::WebDriver::Wait.new(timeout: timeout)
-          wait.until { $driver.find_element(:xpath, "//span[@id='UC_RSLT_NAV_WRK_PTPG_ROWS_GRID']").attribute("innerText") != "" }
-      end
-  
-        
-      num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
-      puts "the number of available sections is:" 
-      puts num_sections 
-  
-      availibility = $driver.find_element(:id, "UC_CLSRCH_WRK_DESCR1$0").attribute("innerText")
-      puts "the first section has this many ppl: "
-      puts availibility
+    def wait_until_appears(type, name, timeout: 5)
+	  		wait = Selenium::WebDriver::Wait.new(timeout: timeout)
+	  		#wait.until { $driver.find_element(:xpath, "//span[@id='UC_RSLT_NAV_WRK_PTPG_ROWS_GRID']").attribute("innerText") != "" }
+	  		wait.until { $driver.find_element(:xpath, "//td[@class='ps_grid-cell']").clickable? }
+		end
+
+			
+		num_sections = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
+		puts "the number of available sections is:" 
+		puts num_sections 
+
+		availibility = $driver.find_element(:id, "UC_CLSRCH_WRK_DESCR1$0").attribute("innerText")
+		puts "the first section has this many ppl: "
+		puts availibility
   
       #$driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText") != " " 
   
