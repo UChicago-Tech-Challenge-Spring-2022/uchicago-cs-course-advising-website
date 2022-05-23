@@ -172,12 +172,11 @@ h5{
 
 
 .signinup{
-  width: 300px;
-  height: 400px;
+  flex-basis: 50%;
   display: inline-block;
-  vertical-align:top;
+  vertical-align:center;
   border-radius: 10px;
-  padding: 15px 25px;
+  padding: 150px 250px;
   box-sizing: border-box;
   cursor: pointer;
   margin: 10px 15px;
