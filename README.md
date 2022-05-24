@@ -7,12 +7,10 @@
 - forgot your password's view: devise/password/new.html.erb
 
 ## Current TODOs:
-- Put CS Manual onto the website
-- Add email confirmation feature and username to Sign in/up system, preferably, use OmniAuth to directly sign in
-- Add email restriction for registration: only uchicago emails are allowed to sign up/in
-- Create editable tables in Schedule Page
-- Integrate NLP to the Schedule Page
-- Implementation of the notification
+- Finish Notification Page (Link to Github page w/ instruction of how to set up)
+- Enable Autosave in Schedule Page (Has to use Ajax)
+- Finish the CS manual with course info from model analysis
+- Forgot Password Setup
 
 ## Standard Workflow
 
