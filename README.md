@@ -10,7 +10,6 @@
 - Finish Notification Page (Link to Github page w/ instruction of how to set up)
 - Enable Autosave in Schedule Page (Has to use Ajax)
 - Finish the CS manual with course info from model analysis
-- Forgot Password Setup
 
 ## Standard Workflow
 
