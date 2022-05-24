@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+gem 'mailgun-ruby'
 gem 'mechanize'
 gem 'devise'
 gem 'rails_db'

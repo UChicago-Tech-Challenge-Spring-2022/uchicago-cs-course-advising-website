@@ -8,6 +8,26 @@
 </head>
 
 <body>
+<%=
+# Get your credentials from your Mailgun dashboard, or from Canvas if you're using mine
+#mg_api_key = "key-6e8f628f8c07bb415ef31325c2207dbf"
+#mg_sending_domain = "mg.appdevproject.com"
+
+# Create an instance of the Mailgun Client and authenticate with your API key
+#mg_client = Mailgun::Client.new(mg_api_key)
+
+# Craft your email as a Hash literal with these four keys
+#email_parameters =  { 
+ # :from => "umbrella@appdevproject.com",
+#  :to => "tjhprivate0416@gmail.com",  # Put your own email address here if you want to see it in action
+#  :subject => "Take an umbrella today!",
+ # :text => "It's going to rain today, take an umbrella with you!"
+#}
+
+# Send your email!
+#mg_client.send_message(mg_sending_domain, email_parameters)
+
+%>
   <!-- your content here... -->
   
 <div class="row">
