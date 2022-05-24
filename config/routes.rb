@@ -11,4 +11,5 @@ get '/schedule', to: 'schedule#index'
 get '/notification', to: 'notification#index'
 post '/notification', to: 'notification#create_monitor'
 
+post '/save', to: 'schedule#save'
 end
