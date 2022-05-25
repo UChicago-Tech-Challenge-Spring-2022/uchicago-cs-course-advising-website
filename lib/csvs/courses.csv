@@ -1,0 +1,53 @@
+,course,keywords,satisfaction level,workload (median)
+1,CMSC 15100,"recursion, coding, data structures, functions",average,12
+2,CMSC 15200,"c programming, data structures, pointers, memory allocation",average,11
+3,CMSC 15400,"computer systems, assembly code, os",average,15
+4,CMSC 20300,"user interfaces, hci, ui, usability, prototyping, designing",low,5
+5,CMSC 20370,"design, user research, hci",low,3
+6,CMSC 20900,"design, computer game, education, teaching, c",low,5
+7,CMSC 21800,"data science, machine learning, statistics, statistical methods, pandas, python",low,4
+8,CMSC 22001,"software design, software engineering, agile, uml, diagrams",average,10
+9,CMSC 22100,"programming languages, lambda calculus, sml, compiler, formal systems",low,8
+10,CMSC 22200,"computer architecture, pipelining, processor, hardware, instruction, cache",average,10
+11,CMSC 22240,"computer architecture, parallelism, dynamic locality, performance",high,3
+12,CMSC 22300,"functional programming, data structures, elm, trees, recursion",low,8
+13,CMSC 22400,"coq, proof, curry-howard, hoare, logic, correspondence",very low,3
+14,CMSC 22500,"type theory, logic, proof, lambda calculus, dependent types",very low,5
+15,CMSC 22600,"compiler, grammars, languages",high,11
+16,CMSC 23000,"operating systems, memory management, abstraction, virtual memory",average,22
+17,CMSC 23010,"performance, data structures, concurrent, software, locks, parallelization",low,17
+18,CMSC 23200,"security, attacks, privacy, vulnerabilities, cryptography",average,8
+19,CMSC 23210,"usable security, research, privacy, usability, papers",average,6
+20,CMSC 23220,"laser, 3d design, printing, cutting, vr, arduino, hardware, electronics, sensors",low,unknown
+21,CMSC 23230,"kicad, circuit, pcb, sensor",very low,5
+22,CMSC 23240,na,unknown,unknown
+23,CMSC 23280,"cryptocurrencies, blockchain, econ",average,unknown
+24,CMSC 23300,"internet, protocols, network, layers, tcp, rfc",average,17
+25,CMSC 23310,"distributed systems, read papers, consensus, paxos, byzantine",very low,9
+26,CMSC 23320,"internet, protocols,  tcp, ip",average,5
+27,CMSC 23360,"networks, wireless, centers, network, tcp",very low,6
+28,CMSC 23400,"mobile computing, sensing, devices, security",average,6
+29,CMSC 23500,"databases, sql, relational models, algebra, transactions",high,11
+30,CMSC 23700,na,unknown,26
+31,CMSC 23710,"visualization, convolution, 3d, R, math]",average,15
+32,CMSC 23900,"d3, visualization, data, javascript, principles, js, react, theory",low,5
+33,CMSC 25025,"machine learning, neural network, clustering, python, algorithms, pca, coding, understanding",average,15
+34,CMSC 25040,"computer vision, techniques, deep learning, networks, pytorch, detection, image, adversarial",average,unknown
+35,CMSC 25300,"machine learning, linear algebra, least squares regression, math, svd, decent gradient, ridge",average,5
+36,CMSC 25400,"machine learning, regression, classification, algorithms, concepts",average,15
+37,CMSC 25460,"optimization, convex, lagrangian, duality, sets",average,5
+38,CMSC 25700,"language, nlp, models, bert, deep, transformers, parsing, ethics",low,4
+39,CMSC 27100,"probability, number theory, proofs, combinatorics, logic, induction",average,6
+40,CMSC 27130,"graph theory, probability, number theory, counting, combinatorics, induction",high,7
+41,CMSC 27200,"algorithms, dynamic programming, np problems, greedy algorithm, conquer divide, proof",high,8
+42,CMSC 27230,"algorithms, np programming, complexity, greedy algorithm, graph",high,10
+43,CMSC 27410,"combinatorics, linear algebra, applications",high,12
+44,CMSC 27500,"graph theory, proof, connectivity, bipartite, algorithms",very high,5
+45,CMSC 27502,na,unknown,unknown
+46,CMSC 27530,"graph theory, linear algebra, spectral, lovasz",average,6
+47,CMSC 27700,"logic, propositional, ordinals, cardinals, ultraproducts, boolean, induction, transfinite",high,8
+48,CMSC 27800,"incompleteness, computability, zfc, turing, godel, hierarchy",very high,3
+49,CMSC 28000,"formal languages, automata, turing machines, computability, computation",average,7
+50,CMSC 28100,"complexity theory, turing, time, space, computability, np problem",high,8
+51,CMSC 28130,"complexity theory, turing, undecidability, np problem, hierarchy, np completeness",very high,unknown
+52,CMSC 28400,"cryptography, security, encryption, ciphers, algorithms, attacks",average,4

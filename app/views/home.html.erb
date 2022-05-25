@@ -4,23 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>UChicago CS Advising Web</title>
-
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="container">
+<%=
+# Get your credentials from your Mailgun dashboard, or from Canvas if you're using mine
+#mg_api_key = "key-6e8f628f8c07bb415ef31325c2207dbf"
+#mg_sending_domain = "mg.appdevproject.com"
+
+# Create an instance of the Mailgun Client and authenticate with your API key
+#mg_client = Mailgun::Client.new(mg_api_key)
+
+# Craft your email as a Hash literal with these four keys
+#email_parameters =  { 
+ # :from => "umbrella@appdevproject.com",
+#  :to => "tjhprivate0416@gmail.com",  # Put your own email address here if you want to see it in action
+#  :subject => "Take an umbrella today!",
+ # :text => "It's going to rain today, take an umbrella with you!"
+#}
+
+# Send your email!
+#mg_client.send_message(mg_sending_domain, email_parameters)
+
+%>
   <!-- your content here... -->
   
 <div class="row">
@@ -32,7 +39,7 @@
 
   <div class="col">
 
-    <a href="/manual">
+    <a href="https://docs.google.com/document/d/1i47N9Kh1xPsW4zwfeHOtw79E7n8AfzHbpbN-o8vyKO0/edit?usp=sharing" target="_blank">
     <div class="card card1">
       <h5>
       CS Manual
@@ -72,6 +79,8 @@
     </a>
   </div>
 </div>
+
+
 </body>
 </html>
 
