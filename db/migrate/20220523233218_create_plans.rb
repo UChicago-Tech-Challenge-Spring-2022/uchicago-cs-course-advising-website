@@ -1,6 +1,7 @@
 class CreatePlans < ActiveRecord::Migration[6.1]
   def change
     create_table :plans do |t|
+      t.string :user_id
       t.string :class1a1 , default: ""
       t.string :class1a2 , default: ""
       t.string :class1a3 , default: ""
