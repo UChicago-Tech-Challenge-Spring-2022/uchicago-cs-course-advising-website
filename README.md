@@ -7,7 +7,7 @@
 - forgot your password's view: devise/password/new.html.erb
 
 ## Current TODOs:
-- Finish Notification Page (Link to Github page w/ instruction of how to set up)
+- Link Notification software to Github page w/ instruction of how to set up
 - Finish the CS manual with course info from model analysis
 
 ## Standard Workflow
