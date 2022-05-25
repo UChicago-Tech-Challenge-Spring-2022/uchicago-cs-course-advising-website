@@ -188,18 +188,19 @@
   <button>save</button>
 </form>
 
-<div class="wrap">
-   <div class="search">
-    <form action="/search" method="post">
-      <input type="text" class="searchTerm" name="search" placeholder="e.g. CMSC 15400" value="">
-      <button class="searchButton">Search</button>
-    </form>
-   </div>
+<form action="search" method="post">
+<div style="position: absolute;left: 62%; top:12%;">
+  <div class="search-box">
+    <button class="btn-search">Go</button>
+    <input type="text" class="input-search" name="search" placeholder="Type to Search course info..." value="">
+  </div>
 </div>
+</form>
+
+<div style="position: absolute;left: 62%; top:15%;">
+<%=@search_result%>
 </div>
 
-  </div>
-  </div>
   </body>
 </html>
 

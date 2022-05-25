@@ -10,7 +10,9 @@ class ScheduleController < ApplicationController
   end
 
   def search
-
+      course = params.fetch("search")
+      @search_result = Course.where({:course_number=> course}).first
+      redirect_to "/schedule"
   end
   
   def save
