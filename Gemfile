@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+gem 'ransack'
 gem "font-awesome-rails"
 gem 'mailgun-ruby'
 gem 'mechanize'

@@ -9,13 +9,16 @@ class ScheduleController < ApplicationController
     end
   end
 
-  def search
-      course = params.fetch("search")
-      @search_result = Course.where({:course_number=> course}).first
-      redirect_to "/schedule"
+  def index2
+    if user_signed_in?
+      render({ :template => "schedule2.html.erb" })
+    else
+      redirect_to "/", alert: "In order to use the Schedule, you have to sign in first"
+    end
   end
   
   def save
+
     plans = Plan.where({ :user_id => current_user.id }).first
     plans.class1a1 = params.fetch("1a1")
     plans.class1a2 = params.fetch("1a2")
@@ -101,6 +104,7 @@ class ScheduleController < ApplicationController
 
     plans.save
     
+
   end
   
 end

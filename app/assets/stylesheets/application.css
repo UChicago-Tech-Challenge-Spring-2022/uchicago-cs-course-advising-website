@@ -248,6 +248,10 @@ tr{
   background-color: #cc0000;
 }
 
+.th3 {
+  background-color: #22a6b3;
+}
+
 .text-background{
   width: fit-content;
   height: fit-content;
@@ -443,3 +447,17 @@ footer a {
   }
 }
 /* footer  */
+
+.resultbar{
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
+  vertical-align:top;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  margin: 10px 15px;
+  background-image: url(https://www.stkconf.org/wp-content/uploads/2018/10/Web-Page-Background-Color.jpg);
+  background-position: center;
+  background-size:cover;
+}
