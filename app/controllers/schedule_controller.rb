@@ -9,6 +9,10 @@ class ScheduleController < ApplicationController
     end
   end
 
+  def search
+
+  end
+  
   def save
     plans = Plan.where({ :user_id => current_user.id }).first
     plans.class1a1 = params.fetch("1a1")

@@ -12,4 +12,5 @@ get '/notification', to: 'notification#index'
 post '/notification', to: 'notification#create_monitor'
 
 post '/save', to: 'schedule#save'
+post '/search', to:'schedule#search'
 end
