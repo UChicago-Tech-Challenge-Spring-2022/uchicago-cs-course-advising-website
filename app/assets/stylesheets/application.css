@@ -339,3 +339,13 @@ pre {
   left: 75%;
   transform: translate(-50%, -50%);
 }
+
+.manual-wrap{
+  border:1px solid #999999;
+  color:#6f6f6f;
+  font-size:10px;
+  width:100%;
+  position: relative;
+  display: inline-block;
+  height: auto;
+}
