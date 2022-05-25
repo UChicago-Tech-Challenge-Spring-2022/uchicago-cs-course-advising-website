@@ -1,7 +1,8 @@
 # README
 
-## Current TODOs:
-- Search bar for model analysis
+## STATUS
+This project is finished. Should there be further updates will depend on each group member.
+
 
 ## Standard Workflow
 
