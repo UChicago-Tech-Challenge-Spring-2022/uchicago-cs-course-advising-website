@@ -1,14 +1,7 @@
 # README
 
-## CSS and Devise
-- put css codes in app/assets/stylesheets/application.css and you can access it anywhere
-- sign up page's view: devise/registration/new.html.erb
-- sign in page's view: devise/session/new.html.erb
-- forgot your password's view: devise/password/new.html.erb
-
 ## Current TODOs:
-- Link Notification software to Github page w/ instruction of how to set up
-- Finish the CS manual with course info from model analysis
+- Search bar for model analysis
 
 ## Standard Workflow
 
