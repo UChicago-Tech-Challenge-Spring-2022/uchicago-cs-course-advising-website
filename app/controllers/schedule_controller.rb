@@ -13,7 +13,7 @@ class ScheduleController < ApplicationController
   def search
 
     course_number = params.fetch(:courseNum)
-    result = Course.where(course_number: course_number).first
+    result = Course.find_by(course_number: course_number)
 
     if result != nil
       respond_to do |format|
