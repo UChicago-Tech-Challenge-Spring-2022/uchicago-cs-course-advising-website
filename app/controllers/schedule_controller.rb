@@ -9,13 +9,6 @@ class ScheduleController < ApplicationController
     end
   end
 
-  def index2
-    if user_signed_in?
-      render({ :template => "schedule2.html.erb" })
-    else
-      redirect_to "/", alert: "In order to use the Schedule, you have to sign in first"
-    end
-  end
   
   def search
 
