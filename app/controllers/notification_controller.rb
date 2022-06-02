@@ -23,8 +23,6 @@ class NotificationController < ApplicationController
     @email = params.fetch("email")
     @courseNum = params.fetch("courseNum")
     @key = "key-6e8f628f8c07bb415ef31325c2207dbf" 
-
-    send_email("Your Monitoring Request for #{@courseNum}", "Monitor event has begun. You will receive a notification when the class #{@courseNum} is available.")
     
     if user_signed_in?
       render template: "notification.html.erb", notice:"Monitor created successfully. Please keep this tab open. DO NOT CLOSE THIS TAB. An email will be sent to you shortly."
@@ -37,6 +35,7 @@ class NotificationController < ApplicationController
 
   def launchBrowser(inputted_course_num)
 
+    #launch the chrome driver in headless mode and search the given course number on the course search website
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')   
@@ -54,14 +53,17 @@ class NotificationController < ApplicationController
       ($driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")).length > 4
     }
   
+    #send email to confirm that the monitor event will begin
+    send_email("Your Monitoring Request for #{@courseNum}", "Monitor event has begun. You will receive a notification when the class #{@courseNum} is available.")
+
+
     num_sections_text = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
     
     num_sections = (num_sections_text[/\d+/]).to_i
     
     section_status = Array.new(num_sections)
   
-    j = 0
-    until (j == num_sections)
+    for j in 0...num_sections
       section_id = "UC_CLSRCH_WRK_DESCR1$" + j.to_s
       total_id = "UC_CLSRCH_WRK_DESCR2$" + j.to_s
   
@@ -82,7 +84,6 @@ class NotificationController < ApplicationController
       section_status[j] = section_space
       puts "Section " + (j + 1).to_s + " has " + section_status[j].to_s + " available seat(s)."
       
-      j += 1
     end
     return section_status
     
@@ -97,23 +98,26 @@ class NotificationController < ApplicationController
     end
   
     if (counter > 0)
-      return 1
+      return true
   
     else
-      return 0
+      return false
     end
   end
   
+
   def query_class_availibility(inputted_course_num)
     loop do
+      #this needs changes because we don't necessarily need the entire launchBrowser code up until clicking the search bar
       section_status_arr = launchBrowser(inputted_course_num)
   
-      if(avail_sec_exists(section_status_arr) == 1)
+      #send the email when there is a seat available
+      if(avail_sec_exists(section_status_arr))
         subject = "Section availability for #{@courseNum}"
         text = "There is at least one available seat in #{@courseNum}!" 
         send_email(subject, text)
-        puts "Email has been sent! Program has been terminated."
         break
+      #should add a feature that sends the email to confirm that the bot is still monitoring the user's desired course after certain period of time
       else 
         puts "No sections have availability. Continuing to query..."
         sleep 60
@@ -121,6 +125,7 @@ class NotificationController < ApplicationController
     end
   end
   
+  #send email with specified subject and text
   def send_email(subject, text)
     mg_api_key = @key
     mg_sending_domain = "mg.appdevproject.com"
