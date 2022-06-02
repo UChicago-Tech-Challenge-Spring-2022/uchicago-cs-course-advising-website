@@ -39,6 +39,8 @@ class NotificationController < ApplicationController
 
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
+    options.add_argument('--no-sandbox')   
+    options.add_argument("--disable-dev-shm-usage")
     $driver = Selenium::WebDriver.for :chrome, options: options
   
     $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL')
@@ -114,7 +116,6 @@ class NotificationController < ApplicationController
         break
       else 
         puts "No sections have availability. Continuing to query..."
-        send_email("[Monitor Event] #{@courseNum}", "No sections have availability. Continuing to query...")
         sleep 60
       end
     end
