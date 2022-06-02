@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 root to: 'home#index'
 
 
+
 get '/schedule', to: 'schedule#index'
 
 get '/notification', to: 'notification#index'

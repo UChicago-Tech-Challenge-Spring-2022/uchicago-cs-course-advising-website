@@ -133,6 +133,8 @@ GEM
       domain_name (~> 0.5)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    jar_wrapper (0.1.8)
+      zip
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -312,6 +314,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    selenium (0.2.11)
+      jar_wrapper
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -378,6 +382,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.5.4)
+    zip (2.0.2)
 
 PLATFORMS
   ruby
@@ -410,6 +415,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sass-rails (>= 6)
+  selenium (~> 0.2.11)
   selenium-webdriver
   skylight
   spring
