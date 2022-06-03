@@ -9,6 +9,7 @@ class ScheduleController < ApplicationController
     end
   end
 
+
   
   def search
 
@@ -24,7 +25,6 @@ class ScheduleController < ApplicationController
     else
       redirect_back fallback_location: "/", alert: "No Course Info Found."
     end
-
 
   end
 
