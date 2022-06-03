@@ -13,16 +13,16 @@ class ScheduleController < ApplicationController
   def search
 
     course_number = params.fetch(:courseNum)
-    result = Course.find_by(course_number: course_number)
+    @result = Course.find_by(course_number: course_number)
 
-    if result != nil
+    if @result != nil
       respond_to do |format|
         format.html { redirect_to "schedule" }
         format.json { head :no_content }
         format.js {render template: "schedule.js.erb"}
       end
     else
-      redirect_back fallback_location: "/", alert: "No Coure Info Found."
+      redirect_back fallback_location: "/", alert: "No Course Info Found."
     end
 
 

@@ -191,12 +191,14 @@
 
 
 <div style="position: absolute;left: 62%; top:12%;">
+<div id="search_display_column">
 <%=form_with url:"/search", method: :post, local:false do |form|%>
     <div class="search-box">
-        <%= form.text_field :courseNum, placeholder: "Type to Search e.g. CMSC 15400", class: "input-search"%>
+        <%= form.text_field :courseNum, placeholder: "Search e.g. CMSC 15400", class: "input-search"%>
         <%= form.submit "Go", class: "btn-search" %>
     </div>
 <% end %>
+</div>
 </div>
 
 
