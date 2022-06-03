@@ -3,8 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+
 gem "selenium", "~> 0.2.11"
 gem 'selenium-webdriver'
+
 gem "font-awesome-rails"
 gem 'mailgun-ruby'
 gem 'mechanize'
