@@ -188,14 +188,23 @@
   <button>save</button>
 </form>
 
-<form action="schedule2" method="get">
+
+
+
+
 <div style="position: absolute;left: 62%; top:12%;">
-  <div class="search-box">
-    <button class="btn-search">Go</button>
-    <input type="text" class="input-search" name="search" placeholder="Type to Search course info..." value="">
-  </div>
+<div id="search_display_column">
+<%=form_with url:"/search", method: :post, local:false do |form|%>
+    <div class="search-box">
+        <%= form.text_field :courseNum, placeholder: "Search e.g. CMSC 15400", class: "input-search"%>
+        <%= form.submit "Go", class: "btn-search" %>
+    </div>
+<% end %>
 </div>
-</form>
+
+</div>
+
+
 
 </body>
 </html>

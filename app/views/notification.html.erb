@@ -16,8 +16,12 @@
   <pre>
   <output>
   <div><h2>The notification bot is for UChicago students to get email notifications as soon as a seat becomes available in a full course.</h2></div>
-  <div><h2>To use this service, go to <a href="https://github.com/UChicago-Tech-Challenge-Spring-2022/the-notification-bot" target=”_blank”>here</a> and follow the instruction! You will also need this key: 
-  <div style="color: red;">key-6e8f628f8c07bb415ef31325c2207dbf</div>
+  <%=form_with url:"/notification", method: :post do |form|%>
+  <%=form.text_field :email, placeholder: "Enter your email address here"%>
+  <%=form.text_field :courseNum, placeholder: "Enter the course number here, e.g. CMSC 15400"%>
+  <%=form.submit "Start Monitoring"%>
+
+  <% end %>
   </output>
   </pre>
   </div>

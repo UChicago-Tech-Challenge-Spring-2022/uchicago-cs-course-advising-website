@@ -1,0 +1,21 @@
+var result = 
+    "<table>" +
+    "<tr>" +
+      "<th class=\"th3\">Course Number:</th>" +
+      "<th class=\"th3\">Workload:</th>" +
+      "<th class=\"th3\">Keywords:</th>" +
+      "<th class=\"th3\">Satisfaction:</th>" +
+    "</tr>" +
+      "<tr>" +
+      "<th class=\"th3\">" + "<%=j(@result.course_number)%>" + "</th>" +
+      "<th class=\"th3\">" + "<%=j(@result.workload)%>" + " Hours/Week</th>" +
+      "<th class=\"th3\">" + "<%=j(@result.keywords)%>" + "</th>" +
+      "<th class=\"th3\">" + "<%=j(@result.satisfaction)%>" + "</th>" +
+    "</tr>" +
+    "</table>";
+
+result = $(result);
+let search_display = $("#search_display_column");
+search_display.after(result);
+result.slideDown(2000);
+

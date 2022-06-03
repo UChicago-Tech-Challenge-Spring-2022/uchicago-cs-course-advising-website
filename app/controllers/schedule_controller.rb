@@ -9,14 +9,25 @@ class ScheduleController < ApplicationController
     end
   end
 
-  def index2
-    if user_signed_in?
-      render({ :template => "schedule2.html.erb" })
-    else
-      redirect_to "/", alert: "In order to use the Schedule, you have to sign in first"
-    end
-  end
+
   
+  def search
+
+    course_number = params.fetch(:courseNum)
+    @result = Course.find_by(course_number: course_number)
+
+    if @result != nil
+      respond_to do |format|
+        format.html { redirect_to "schedule" }
+        format.json { head :no_content }
+        format.js {render template: "schedule.js.erb"}
+      end
+    else
+      redirect_back fallback_location: "/", alert: "No Course Info Found."
+    end
+
+  end
+
   def save
 
     plans = Plan.where({ :user_id => current_user.id }).first
@@ -107,4 +118,5 @@ class ScheduleController < ApplicationController
 
   end
   
+
 end
