@@ -22,7 +22,7 @@ class NotificationController < ApplicationController
     #### Could also verify if emails and courseNumber are valid?
     @email = params.fetch("email")
     @courseNum = params.fetch("courseNum")
-    @key = NV.fetch("mailgun_key")
+    @key = ENV.fetch("mailgun_key")
     
     if user_signed_in?
       render template: "notification.html.erb", notice:"Monitor created successfully. Please keep this tab open. DO NOT CLOSE THIS TAB. An email will be sent to you shortly."
