@@ -5,6 +5,7 @@ class NotificationController < ApplicationController
   require 'selenium-webdriver'
 
 
+
   #added the following line for POST /notification error; Need to fix it later for security issue
   #skip_before_action :verify_authenticity_token
 

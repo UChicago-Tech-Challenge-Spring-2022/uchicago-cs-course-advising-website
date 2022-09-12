@@ -16,9 +16,10 @@
   <pre>
   <output>
   <div><h2>The Bot is for UChicago students to get email notifications as soon as a seat becomes available in a full course.</h2></div>
+  <div><h2>Note: the course number you enter should follow the format "ABCD 12345" (4 letters + space + 5 digits)</h2><div>
   <%=form_with url:"/notification", method: :post do |form|%>
-  <%=form.text_field :email, placeholder: "Enter your email address here"%>
-  <%=form.text_field :courseNum, placeholder: "Enter the course number here, e.g. CMSC 15400"%>
+  <%=form.text_field :email, placeholder: "Enter your email address here", class:"input-search"%>
+  <%=form.text_field :courseNum, placeholder: "Enter the course number here", class: "input-search"%>
   <%=form.submit "Start Monitoring"%>
 
   <% end %>

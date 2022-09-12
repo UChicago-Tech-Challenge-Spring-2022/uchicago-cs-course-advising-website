@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+gem 'mail'
+gem 'mime'
+gem 'gmail'
 
 gem "selenium", "~> 0.2.11"
 gem 'selenium-webdriver'

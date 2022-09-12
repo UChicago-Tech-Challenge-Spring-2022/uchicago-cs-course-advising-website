@@ -270,7 +270,7 @@ tr{
   background-color: black;
   background-position: center;
   background-size: cover;
-  background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
+  background-image: url('/assets/zhuhai_riyuebei.jpg');
   height: 100vh;
   margin: 0;
   overflow: hidden;
@@ -279,7 +279,7 @@ tr{
   box-sizing: border-box;
   color: white;
   font: 1.3rem Inconsolata, monospace;
-  text-shadow: 0 0 5px #c8c8c8;
+  text-shadow: 0 0 5px #000000;
 }
 
 .terminal-style::after {
@@ -299,7 +299,6 @@ pre {
 }
 
 
-
 .search-box{
   width: fit-content;
   height: fit-content;
@@ -307,15 +306,15 @@ pre {
 }
 .input-search{
   height: 50px;
-  width: 50px;
+  width: 300px;
   border-style: none;
   padding: 10px;
   font-size: 18px;
   letter-spacing: 2px;
   outline: none;
-  border-radius: 25px;
-  transition: all .5s ease-in-out;
+  border-radius: 0px;
   background-color: #22a6b3;
+  border-bottom:1px solid rgba(255,255,255,.5);
   padding-right: 40px;
   color:#fff;
 }
@@ -325,6 +324,8 @@ pre {
   letter-spacing: 2px;
   font-weight: 100;
 }
+
+
 .btn-search{
   width: 50px;
   height: 70px;
@@ -341,13 +342,6 @@ pre {
   pointer-events: painted;  
 }
 .btn-search:focus ~ .input-search{
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid rgba(255,255,255,.5);
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-}
-.input-search:focus{
   width: 300px;
   border-radius: 0px;
   background-color: transparent;
@@ -461,3 +455,4 @@ footer a {
   background-position: center;
   background-size:cover;
 }
+
