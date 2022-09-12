@@ -3,9 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
-gem 'mail'
-gem 'mime'
-gem 'gmail'
 
 gem "selenium", "~> 0.2.11"
 gem 'selenium-webdriver'
@@ -59,7 +56,6 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
