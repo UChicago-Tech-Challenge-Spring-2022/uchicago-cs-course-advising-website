@@ -6,14 +6,10 @@ class NotificationController < ApplicationController
 
 
   #added the following line for POST /notification error; Need to fix it later for security issue
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
 
   def index
-    if user_signed_in?
-      render({ :template => "notification.html.erb" })
-    else
-      redirect_to "/", alert: "In order to use the Notifier, you have to sign in first"
-    end
+    render({ :template => "notification.html.erb" })
   end
 
   #Need to modify create_monitor, right now does the same thing as index
@@ -24,11 +20,11 @@ class NotificationController < ApplicationController
     @courseNum = params.fetch("courseNum")
     @key = ENV.fetch("mailgun_key")
     
-    if user_signed_in?
-      render template: "notification.html.erb", notice:"Monitor created successfully. Please keep this tab open. DO NOT CLOSE THIS TAB. An email will be sent to you shortly."
-    else
-      redirect_to "/", alert: "Error occurred, please try again."
-    end
+    #if user_signed_in?
+    render template: "notification.html.erb", notice:"Monitor created successfully. Please keep this tab open. DO NOT CLOSE THIS TAB. An email will be sent to you shortly."
+    #else
+    #  redirect_to "/", alert: "Error occurred, please try again."
+    #end
 
     query_class_availibility(@courseNum)
   end

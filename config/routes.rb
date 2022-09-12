@@ -3,14 +3,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-root to: 'home#index'
+#root to: 'home#index'
+root to: 'notification#index'
 
 
 
 get '/schedule', to: 'schedule#index'
 get '/schedule2', to: 'schedule#index2'
 
-get '/notification', to: 'notification#index'
+#get '/notification', to: 'notification#index'
 post '/notification', to: 'notification#create_monitor'
 
 post '/save', to: 'schedule#save'
