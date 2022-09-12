@@ -33,19 +33,24 @@ class NotificationController < ApplicationController
     query_class_availibility(@courseNum)
   end
 
-  def launchBrowser(inputted_course_num)
+  def launchBrowser(inputted_course_num, isFirstCall)
 
     #launch the chrome driver in headless mode and search the given course number on the course search website
-    options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')   
-    options.add_argument("--disable-dev-shm-usage")
-    $driver = Selenium::WebDriver.for :chrome, options: options
+    #only open the browswer to the target website for the first call; the rest of the call will just be clicking the search bar
+    if isFirstCall
+      options = Selenium::WebDriver::Chrome::Options.new
+      options.add_argument('--headless')
+      options.add_argument('--no-sandbox')   
+      options.add_argument("--disable-dev-shm-usage")
+      $driver = Selenium::WebDriver.for :chrome, options: options
   
-    $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL')
-  
-    search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys(inputted_course_num)
-  
+      $driver.get('https://coursesearch92.ais.uchicago.edu/psc/prd92guest/EMPLOYEE/HRMS/c/UC_STUDENT_RECORDS_FL.UC_CLASS_SEARCH_FL.GBL')
+      select= $driver.find_element(:id, "UC_CLSRCH_WRK2_STRM")
+      option = Selenium::WebDriver::Support::Select.new(select)
+      option.select_by(:value, "2228")
+      search = $driver.find_element(:id, "UC_CLSRCH_WRK2_PTUN_KEYWORD").send_keys(inputted_course_num)
+    end
+
     $driver.find_element(:id, "UC_CLSRCH_WRK_SSR_PB_SEARCH$IMG").click()
   
     wait = Selenium::WebDriver::Wait.new(timeout: 20)
@@ -54,7 +59,10 @@ class NotificationController < ApplicationController
     }
   
     #send email to confirm that the monitor event will begin
-    send_email("Your Monitoring Request for #{@courseNum}", "Monitor event has begun. You will receive a notification when the class #{@courseNum} is available.")
+    if isFirstCall
+      send_email("Your Monitoring Request for #{@courseNum}", "Hello!\n\nMy name is Bot.\n\nYour monitor event has begun. You will receive a notification when the class #{@courseNum} is available!\n\n\nYours,\nBot")
+    end
+
 
 
     num_sections_text = $driver.find_element(:id, "UC_RSLT_NAV_WRK_PTPG_ROWS_GRID").attribute("innerText")
@@ -107,20 +115,29 @@ class NotificationController < ApplicationController
   
 
   def query_class_availibility(inputted_course_num)
+    count = 0
+    isFirstCall = true
     loop do
-      #this needs changes because we don't necessarily need the entire launchBrowser code up until clicking the search bar
-      section_status_arr = launchBrowser(inputted_course_num)
+      section_status_arr = launchBrowser(inputted_course_num, isFirstCall)
+      isFirstCall = false
   
       #send the email when there is a seat available
       if(avail_sec_exists(section_status_arr))
         subject = "Section availability for #{@courseNum}"
-        text = "There is at least one available seat in #{@courseNum}!" 
+        text = "Yooooooo,\n\nThere is at least one available seat in #{@courseNum}!\n\nPlease log into myportal and add the class!\n\nThank you for using the service, the monitoring event has been terminated.\n\n\nYours,\nBot" 
         send_email(subject, text)
         break
       #should add a feature that sends the email to confirm that the bot is still monitoring the user's desired course after certain period of time
       else 
         puts "No sections have availability. Continuing to query..."
-        sleep 60
+        count = count + 20
+        sleep 20
+        if count >= 1800
+          subject = "Continue Monitoring on #{@courseNum}"
+          text = "Hello!\n\n#{@courseNum} is still full, but I will continue monitoring the status for you!\n\n\nYours,\nBot"
+          send_email(subject, text)
+          count = 0
+        end
       end
     end
   end
