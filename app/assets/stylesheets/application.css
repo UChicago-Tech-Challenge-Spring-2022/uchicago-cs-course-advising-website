@@ -120,7 +120,7 @@ button{
   box-sizing: border-box;
   cursor: pointer;
   margin: 10px 15px;
-  background-image: url(https://www.stkconf.org/wp-content/uploads/2018/10/Web-Page-Background-Color.jpg);
+  background-image: url('assets/whitecolor.png');
   background-position: center;
   background-size:cover;
   transition: transform 0.5s;
@@ -128,19 +128,19 @@ button{
 }
 
 .card1{
-  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_488801411_2000133320009280356_115425.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url('/assets/book.png');
 }
 
 .card2{
-  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://media.wired.com/photos/5a0a38c1d07f6824ff44221b/master/w_2560%2Cc_limit/twitterlists-TA.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url('/assets/todolist.png');
 }
 
 .card3{
-  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/330px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url('/assets/book.png');
 }
 
 .card4{
-  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url(https://filestage.io/wp-content/uploads/2021/06/feedback-flow.png);
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0)),url('/assets/book.png');
 }
 .card:hover{
   transform:translateY(-20px);
@@ -203,7 +203,7 @@ h5{
   box-sizing: border-box;
   cursor: pointer;
   margin: 10px 15px;
-  background-image: url(https://www.stkconf.org/wp-content/uploads/2018/10/Web-Page-Background-Color.jpg);
+  background-image: url('/assets/whitecolor.png');
   background-position: center;
   background-size:cover;
   transition: transform 0.5s;
@@ -261,7 +261,7 @@ tr{
   padding: 15px 25px;
   box-sizing: border-box;
   margin: 10px 15px;
-  background-image: url(https://www.stkconf.org/wp-content/uploads/2018/10/Web-Page-Background-Color.jpg);
+  background-image: url('/assets/whitecolor.png');
   background-position: center;
   background-size:cover;
 
@@ -391,56 +391,6 @@ footer a {
     text-decoration: none;
   margin-right:5px;
 }
-.youtubeBtn{
-    position: fixed;
-    left: 50%;
-  transform:translatex(-50%);
-    bottom: 45px;
-    cursor: pointer;
-    transition: all .3s;
-    vertical-align: middle;
-    text-align: center;
-    display: inline-block;
-}
-.youtubeBtn i{
-   font-size:20px;
-  float:left;
-}
-.youtubeBtn a{
-    color:#ff0000;
-    animation: youtubeAnim 1000ms linear infinite;
-  float:right;
-}
-.youtubeBtn a:hover{
-  color:#c9110f;
-  transition:all .3s ease-in-out;
-  text-shadow: none;
-}
-.youtubeBtn i:active{
-  transform:scale(.9);
-  transition:all .3s ease-in-out;
-}
-.youtubeBtn span{
-    font-family: 'Lato';
-    font-weight: normal;
-    color: #fff;
-    display: block;
-    font-size: 12px;
-    float: right;
-    line-height: 20px;
-    padding-left: 5px;
-  
-}
-
-@keyframes youtubeAnim{
-  0%,100%{
-    color:#c9110f;
-  }
-  50%{
-    color:#ff0000;
-  }
-}
-/* footer  */
 
 .resultbar{
   width: fit-content;
@@ -451,7 +401,7 @@ footer a {
   padding: 15px 25px;
   box-sizing: border-box;
   margin: 10px 15px;
-  background-image: url(https://www.stkconf.org/wp-content/uploads/2018/10/Web-Page-Background-Color.jpg);
+  background-image: url('/assets/whitecolor.png');
   background-position: center;
   background-size:cover;
 }
